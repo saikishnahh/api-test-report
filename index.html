@@ -1,0 +1,119 @@
+<script type = "text/javascript" src="parseData.js"></script>
+<body style="margin:20px;padding:10px;font-family: Nunito, sans-serif;">
+  <h1>Performance Test Report</h1>
+<h2 id="title"></h2>
+<div id="the-whole-thing" style="width: 100%; overflow: hidden;">
+  <div id="leftThing" style="width: 300px; float: left;">
+    <h3>Summary</h3> 
+    <h4>App Average CPU:</h4>
+    <p id="cpuAvg"></p>
+    <h4>App Peak CPU:</h4>
+    <p id="cpuHigh"></p>
+    <h4>App Peak RAM:</h4>
+    <p id="memHigh"></p>
+  </div>
+  <div id="content" style="width: 400px; float: left;">
+    <h3>Video recording</h3>
+    <iframe style="height: 30%; border: none" src = "./video.mp4"></iframe>
+  </div>
+  <div id="rightThing" style="width: 300px; float: left;">
+    <h3>Session</h3> 
+    <h4>App Version:</h4>
+    <p id="app_version"></p>
+    <h4>Os Version:</h4>
+    <p id="os_version"></p>
+    <h4>Device:</h4>
+    <p id="device"></p>
+  </div>
+</div>
+
+  <div>
+    <h3>CPU Usage</h3>
+    <canvas id="cpuChart", width="1200" height="400"></canvas>
+  </div>
+  <div>
+    <h3>Memory Usage</h3>
+      <canvas id="memChart", width="1200" height="400"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    chartIt();
+
+    async function chartIt(){
+      await getData();
+
+      const ctx = document.getElementById('cpuChart');
+      const cpuChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: xPointsTs,
+          datasets: [{
+            label: 'Device Total CPU Usage',
+            data: yPointsCpu,
+            borderWidth: 1.5,
+            fill: true
+          }, {
+            label: 'App CPU Usage',
+            data: yPointsCpuBuild,
+            borderWidth: 1.5,
+            backgroundColor: 'rgba(33, 145, 81, 0.2)',
+            fill: true
+          }]
+        },
+        options: {
+          responsive: false,
+          elements: {
+                    point:{
+                        radius: 1.5
+                    }
+                },
+          scales: {
+            y: {
+              beginAtZero: true
+            },
+            x: {
+              ticks:{
+                maxTicksLimit: 10
+              }
+            }
+          }
+        }
+      });
+
+      const ctx2 = document.getElementById('memChart');
+      const memChart = new Chart(ctx2, {
+        type: 'line',
+        data: {
+          labels: xPointsTs,
+          datasets: [{
+            label: 'App MEM Usage',
+            data: yPointsMem,
+            backgroundColor: 'rgba(130, 177, 190, 0.8)',
+            fill: true,
+            borderWidth: 1.5
+          }]
+        },
+        options: {
+          responsive: false,
+          elements: {
+                    point:{
+                        radius: 1.5
+                    }
+                },
+          scales: {
+            y: {
+              beginAtZero: true
+            },
+            x: {
+              ticks:{
+                maxTicksLimit: 10
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
