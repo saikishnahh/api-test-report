@@ -1,0 +1,4 @@
+{
+  "using": "-android uiautomator",
+  "value": "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().className(\"android.widget.TextView\").text(\"Sign out\"))"
+}

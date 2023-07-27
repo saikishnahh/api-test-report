@@ -1,0 +1,1 @@
+{"series":[{"metric":"qa.appLaunch.clean","points":[{"timestamp":1689588809,"value":7863.817586377263}],"type":3,"tags":["env:nightly","version:1.130.0-40944-nightly","device:M8"]},{"metric":"qa.appLaunch.dirty","points":[{"timestamp":1689589059,"value":10499.502060249448}],"type":3,"tags":["env:nightly","version:1.130.0-40944-nightly","device:M8"]}]}

@@ -1,0 +1,1 @@
+{"series":[{"metric":"qa.coldStart.dirty","points":[1688233470,16359.438223814965],"type":"gauge","tags":["env:nightly","version:1.130.0-40640-nightly","device:M8"]},{"metric":"qa.coldStart.clean","points":[1688233778,13526.616799795627],"type":"gauge","tags":["env:nightly","version:1.130.0-40640-nightly","device:M8"]}]}

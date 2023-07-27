@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//android.widget.EditText[@resource-id=\"passwordInput\"]/ancestor::android.view.ViewGroup[@resource-id=\"inputContainer\"]/following-sibling::android.widget.Button"
+}

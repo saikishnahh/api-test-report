@@ -1,0 +1,1 @@
+{"series":[{"metric":"qa.etSessionOverview.clean","points":[{"timestamp":1689579152,"value":3658.6264925152063}],"type":3,"tags":["env:nightly","version:1.130.0-40944-nightly","device:M8"]},{"metric":"qa.etSessionOverview.dirty","points":[{"timestamp":1689579652,"value":3720.8959344923496}],"type":3,"tags":["env:nightly","version:1.130.0-40944-nightly","device:M8"]}]}
